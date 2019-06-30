@@ -67,3 +67,11 @@ intersected_df10 = pd.merge(intersected_df3, intersected_df4, how='inner')
 
 final = pd.merge(intersected_df9, intersected_df10, how='inner')
 final.to_csv("Final_Dataset.csv",index=False)
+
+
+#########################Adding Life Expectency to Final Dataset#########################################################
+
+df_life_expectency=pd.read_csv("Life Expectancy Data.csv")
+merged_pd=pd.merge(final,df_life_expectency, how='inner')
+
+merged_pd.to_csv("Final_Dataset.csv",index=False)
